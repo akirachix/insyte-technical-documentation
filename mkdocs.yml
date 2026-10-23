@@ -1,0 +1,61 @@
+site_name: Insyte Technical Documentation
+site_description: Technical documentation for Insyte, a night-light alert dashboard and offline patrol app for Lake Kariba.
+site_author: AkiraChix CodeHive
+
+theme:
+  name: material
+  palette:
+    scheme: default
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+
+# Labels for the `status:` front-matter key (shows an icon beside the nav item).
+# Change a page's status to `implemented` once its content is written.
+extra:
+  status:
+    planned: Planned, content still to be written
+    implemented: Written
+
+nav:
+  - Getting Started:
+      - Home: index.md
+      - Overview: overview.md
+  - System:
+      - Architecture: architecture.md
+      - Backend / API: backend.md
+      - Patrol Officer Mobile App: frontend-mobile.md
+      - Coordinator Web App: frontend-web.md
+  - Operations:
+      - Alert Engine: alert-engine.md
+      - Security: security.md
+      - Deployment: deployment.md
+  - Guides:
+      - Developer Guide: developer-guide.md
+      - Limitations: limitations.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
