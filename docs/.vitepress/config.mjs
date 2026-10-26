@@ -1,7 +1,9 @@
 import { defineConfig } from "vitepress";
+
 const base = process.env.GITHUB_ACTIONS ? "/insyte-technical-documentation/" : "/";
+
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? "/insyte-technical-documentation/" : "/",
+  base,
   title: "Vesper Docs",
   description: "Technical documentation for Vesper, satellite night-light intelligence for Lake Kariba",
   lang: "en-GB",
