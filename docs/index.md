@@ -38,7 +38,7 @@ features:
 | 4 | [Frontend Web](/frontend-web/overview) | The Next.js coordinator dashboard |
 | 5 | [Frontend Mobile](/frontend-mobile/overview) | The Flutter patrol officer app |
 | 6 | [Security](/security/overview) | Authentication, access control and protections, mapped to the OWASP Top 10 |
-| 7 | [Deployment](/deployment/overview) | Environments, configuration and how to run each part |
+| 7 | [Deployment](/backend/deployment) | Environments, configuration and how to run each part |
 
 ::: tip How to read these docs
 Each page describes the system **as it is built today**.

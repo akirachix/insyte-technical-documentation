@@ -36,7 +36,7 @@ export default defineConfig({
           { text: "Frontend Web", link: "/frontend-web/overview" },
           { text: "Frontend Mobile", link: "/frontend-mobile/overview" },
           { text: "Security", link: "/security/overview" },
-          { text: "Deployment", link: "/deployment/overview" },
+          { text: "Deployment", link: "/backend/deployment" },
         ],
       },
     ],

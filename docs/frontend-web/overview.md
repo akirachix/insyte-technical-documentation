@@ -86,6 +86,17 @@ Nothing is hard-coded. Every setting is read from `.env.local`:
 - Tables become stacked cards on small screens, with each cell labelled by its column name.
 - Every page shows a clear message when data cannot be loaded, instead of an empty screen.
 
+
+
+## Deployment
+
+### Deploy on Vercel
+
+1. Import the `insyte-frontend` repository in Vercel. It detects Next.js.
+2. Add every `NEXT_PUBLIC_*` variable from `.env.local` in **Project Settings → Environment Variables**, with `NEXT_PUBLIC_API_URL` set to the hosted API.
+3. Add the Vercel domain to the API's `CORS_ALLOWED_ORIGINS`.
+4. Every push to `main` deploys to production; pull requests get preview links.
+
 ## Running Locally
 
 ```bash

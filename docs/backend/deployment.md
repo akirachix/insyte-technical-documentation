@@ -15,15 +15,10 @@ This page explains how to run each part of Vesper locally and how it is set up f
 | Repository | Contents |
 |---|---|
 | `insyte-backend` | FastAPI API, models, services, tests |
-| `insyte-frontend` | Next.js coordinator dashboard |
-| `insyte-mobile` | Flutter officer app |
-| `kariba-cleaning` | Cleaning and model notebooks, `clean_kariba.py` |
-| `vesper-docs` | This documentation (VitePress) |
 
 - Work happens on `feature/<name>` branches.
 - Pull requests go into `develop`. Only the trainer merges into `develop`.
 - `develop` is merged into `main` for releases.
-- A pull request needs passing CI: Ruff and pytest for the backend; ESLint, Prettier and the build for the web.
 
 ## Backend
 
@@ -60,9 +55,7 @@ All settings come from environment variables (or `.env` locally). Nothing secret
 | `BASINS_SOURCE` | Path or https URL of the basins JSON | required |
 | `SEED_COORDINATOR_*` | The first coordinator, created on first start | empty |
 
-::: tip Zone data when deployed
-`ZONES_SOURCE` and `BASINS_SOURCE` accept an `https://` URL, so the hosted API can read the zone files from a raw GitHub Gist or storage link. Use a raw link **without** a commit ID so it always serves the latest version.
-:::
+
 
 ### Production checks
 
@@ -81,79 +74,3 @@ The API refuses to start in `production` if:
 5. Serve over HTTPS only. HSTS switches on automatically in production.
 
 
-
-### Frontend Conventions
-
-- Plain CSS: one `.css` file next to each `.jsx` component, no inline styles, no Tailwind.
-- JavaScript only (no TypeScript).
-- No hard-coded values: URLs, thresholds and map settings come from `.env.local`.
-
-
-## Frontend Web
-
-### Run locally
-
-```bash
-cd insyte-frontend
-npm install
-npm run dev
-```
-
-Create `.env.local` with the variables listed in [Frontend Web](/frontend-web/overview#configuration) first.
-
-### Deploy on Vercel
-
-1. Import the `insyte-frontend` repository in Vercel. It detects Next.js.
-2. Add every `NEXT_PUBLIC_*` variable from `.env.local` in **Project Settings → Environment Variables**, with `NEXT_PUBLIC_API_URL` set to the hosted API.
-3. Add the Vercel domain to the API's `CORS_ALLOWED_ORIGINS`.
-4. Every push to `main` deploys to production; pull requests get preview links.
-
-## Frontend Mobile
-
-```bash
-cd insyte-mobile
-flutter pub get
-flutter run --dart-define=API_URL=https://<api-host>/vesper
-```
-
-Release build for Android:
-
-```bash
-flutter build apk --release --dart-define=API_URL=https://<api-host>/vesper
-```
-
-## Data and Model
-
-```bash
-cd ~/kariba-cleaning
-env/bin/python -m notebook
-```
-
-1. Run `kariba_data_cleaning.ipynb`. It writes `out/kariba_clean_points.csv`, `out/kariba_nightly_qc.csv` and `out/kariba_cleaning_log.csv`.
-2. Run `kariba_dbscan_model.ipynb`. It writes the readings, baselines, alerts and `kariba_model_settings.json` to `model/`.
-
-## This Documentation
-
-```bash
-cd vesper-docs
-npm install
-npm run docs:dev
-```
-
-Deploy on Vercel with:
-
-| Setting | Value |
-|---|---|
-| Framework preset | VitePress |
-| Build command | `npm run docs:build` |
-| Output directory | `.vitepress/dist` |
-
-## Release Checklist
-
-- [ ] Ruff and all backend tests pass
-- [ ] Web lint, format check and build pass
-- [ ] Migrations applied to the production database
-- [ ] `ENVIRONMENT=production`, HTTPS only, CORS limited to the dashboard domain
-- [ ] Secrets set in the host, none in the repository
-- [ ] Zone and basin sources reachable from the host
-- [ ] Coordinator account created and its password changed

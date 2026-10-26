@@ -181,4 +181,4 @@ Vesper is built on a plausible idea that has not yet been tested on the lake. Th
 | The coordinator dashboard | [Frontend Web](/frontend-web/overview) |
 | The officer app | [Frontend Mobile](/frontend-mobile/overview) |
 | Authentication, roles and safeguards | [Security](/security/overview) |
-| Running and hosting each part | [Deployment](/deployment/overview) |
+| Running and hosting each part | [Deployment](/backend/deployment) |
