@@ -182,3 +182,20 @@ Vesper is built on a plausible idea that has not yet been tested on the lake. Th
 | The officer app | [Frontend Mobile](/frontend-mobile/overview) |
 | Authentication, roles and safeguards | [Security](/security/overview) |
 | Running and hosting each part | [Deployment](/backend/deployment) |
+
+
+## Documentation Deployment
+
+This documentation site is built using VitePress and deployed automatically using GitHub Actions.
+
+### Local Development
+To run the documentation portal locally for editing:
+```bash
+npm run docs:dev
+```
+The site will be accessible locally at `http://localhost:5173/`.
+
+### Production Deployment
+Deployments are fully automated via CI/CD:
+1. Any commits pushed or merged into the `main` branch trigger the `.github/workflows/deploy-docs.yml` workflow.
+2. The workflow installs project dependencies, executes `npm run docs:build`, and publishes the static bundles directly to **GitHub Pages**.
