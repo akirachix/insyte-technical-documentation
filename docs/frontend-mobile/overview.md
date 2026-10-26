@@ -72,6 +72,8 @@ Signal is poor on much of the lake, so officers must be able to save records wit
 - Records that fail validation are kept apart from network failures, so they are not resent forever.
 - Signing out clears protected local data on shared phones.
 
+
+## Deployment
 ## Running Locally
 
 ```bash
@@ -80,3 +82,12 @@ flutter run --dart-define=API_URL=http://10.0.2.2:8001/vesper
 ```
 
 `10.0.2.2` reaches the computer's `localhost` from the Android emulator. On a real phone, use the computer's network address.
+
+
+
+Release build for Android:
+
+```bash
+flutter build apk --release --dart-define=API_URL=https://<api-host>/vesper
+```
+

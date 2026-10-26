@@ -10,9 +10,10 @@ Vesper is designed around three principles:
 
 Vesper is split into three layers. The clients never calculate alerts themselves: they ask the API for processed results.
 
-<a href="/diagrams/system-architecture.png" target="_blank">
-  <img src="/diagrams/system-architecture.png" alt="Vesper system architecture diagram" />
+<a href="../public/diagrams/system-architecture.png" target="_blank">
+  <img src="../public/diagrams/system-architecture.png" alt="Vesper system architecture diagram" />
 </a>
+
 
 - [Vesper SAD on Lucidspark](https://lucid.app/lucidspark/cc699984-8901-451a-b04f-a16a195d2490/edit?invitationId=inv_0cb716aa-7a66-4a02-900a-03febc664ac5&page=0_0#)
 
@@ -110,3 +111,17 @@ Mobile app for patrol officers: sign in, assigned alerts, inspections, violation
 | Nightly processing | One night at a time, re-runnable: a reading per zone per night and an alert per reading and cluster are unique |
 | Lists | List endpoints for growing tables (alerts, assignments, inspections, reports, history) are paginated with `limit` and `offset` |
 | Offline field work | Officers save records on the phone and sync in batches |
+
+
+# Deployment
+
+## Data and Model
+
+```bash
+cd ~/kariba-cleaning
+env/bin/python -m notebook
+```
+
+1. Run `kariba_data_cleaning.ipynb`. It writes `out/kariba_clean_points.csv`, `out/kariba_nightly_qc.csv` and `out/kariba_cleaning_log.csv`.
+2. Run `kariba_dbscan_model.ipynb`. It writes the readings, baselines, alerts and `kariba_model_settings.json` to `model/`.
+
