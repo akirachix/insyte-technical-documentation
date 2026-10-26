@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-
+const base = process.env.GITHUB_ACTIONS ? "/insyte-technical-documentation/" : "/";
 export default defineConfig({
   base: process.env.GITHUB_ACTIONS ? "/insyte-technical-documentation/" : "/",
   title: "Vesper Docs",
@@ -7,9 +7,9 @@ export default defineConfig({
   lang: "en-GB",
   cleanUrls: false,
   lastUpdated: true,
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
+  head: [["link", { rel: "icon", type: "image/png", href: `${base}logo.png` }]],
   themeConfig: {
-    logo: "/logo.svg",
+    logo: "/logo.png",
     siteTitle: false,
     nav: [
       { text: "Home", link: "/" },
