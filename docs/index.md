@@ -6,13 +6,15 @@ hero:
   text: Satellite night-light intelligence for Lake Kariba
   tagline: Finding unusual kapenta fishing activity from space, and giving patrol teams a clear place to look.
   image:
-    src: /logo.svg
+    src: /logo.png
     alt: Vesper
   actions:
     - theme: brand
       text: Get Started
       link: /overview
     - theme: alt
+      text: Architecture
+      link: /architecture/overview
 
 
 features:
