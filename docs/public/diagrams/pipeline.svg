@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#122B59"/>
+    </marker>
+  </defs>
+  <rect width="960" height="300" fill="#FFFFFF"/>
+
+  <g font-size="13" fill="#122B59" text-anchor="middle">
+    <rect x="20" y="40" width="160" height="120" rx="12" fill="#E9F1F8" stroke="#122B59" stroke-width="1.5"/>
+    <text x="100" y="72" font-size="15" font-weight="700">1. Read</text>
+    <text x="100" y="98">VNP46A1 file</text>
+    <text x="100" y="116">radiance, cloud,</text>
+    <text x="100" y="134">quality, moon</text>
+
+    <rect x="208" y="40" width="160" height="120" rx="12" fill="#E9F1F8" stroke="#122B59" stroke-width="1.5"/>
+    <text x="288" y="72" font-size="15" font-weight="700">2. Clean</text>
+    <text x="288" y="98">drop cloud, cirrus,</text>
+    <text x="288" y="116">daytime, flagged,</text>
+    <text x="288" y="134">off-lake pixels</text>
+
+    <rect x="396" y="40" width="160" height="120" rx="12" fill="#BCE0FE" stroke="#122B59" stroke-width="1.5"/>
+    <text x="476" y="72" font-size="15" font-weight="700">3. Find lights</text>
+    <text x="476" y="98">robust threshold,</text>
+    <text x="476" y="116">local peaks, merge</text>
+    <text x="476" y="134">twin pixels</text>
+
+    <rect x="584" y="40" width="160" height="120" rx="12" fill="#BCE0FE" stroke="#122B59" stroke-width="1.5"/>
+    <text x="664" y="72" font-size="15" font-weight="700">4. Cluster</text>
+    <text x="664" y="98">DBSCAN, haversine</text>
+    <text x="664" y="116">eps 3 km,</text>
+    <text x="664" y="134">min 5 lights</text>
+
+    <rect x="772" y="40" width="168" height="120" rx="12" fill="#77E6F6" stroke="#122B59" stroke-width="1.5"/>
+    <text x="856" y="72" font-size="15" font-weight="700">5. Score</text>
+    <text x="856" y="98">reading vs baseline</text>
+    <text x="856" y="116">for the moon band;</text>
+    <text x="856" y="134">score ≥ 3 → alert</text>
+  </g>
+
+  <g stroke="#122B59" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="180" y1="100" x2="204" y2="100"/>
+    <line x1="368" y1="100" x2="392" y2="100"/>
+    <line x1="556" y1="100" x2="580" y2="100"/>
+    <line x1="744" y1="100" x2="768" y2="100"/>
+  </g>
+
+  <g font-size="13" fill="#122B59" text-anchor="middle">
+    <rect x="208" y="200" width="160" height="64" rx="10" fill="#FFFFFF" stroke="#122B59" stroke-dasharray="5 4"/>
+    <text x="288" y="226" font-weight="700">nightly QC</text>
+    <text x="288" y="246">skip if lake too cloudy</text>
+
+    <rect x="584" y="200" width="160" height="64" rx="10" fill="#FFFFFF" stroke="#122B59" stroke-dasharray="5 4"/>
+    <text x="664" y="226" font-weight="700">zone_light_reading</text>
+    <text x="664" y="246">one row per zone</text>
+
+    <rect x="772" y="200" width="168" height="64" rx="10" fill="#FFFFFF" stroke="#122B59" stroke-dasharray="5 4"/>
+    <text x="856" y="226" font-weight="700">alert</text>
+    <text x="856" y="246">one row per cluster</text>
+  </g>
+  <g stroke="#122B59" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="288" y1="160" x2="288" y2="196"/>
+    <line x1="664" y1="160" x2="664" y2="196"/>
+    <line x1="856" y1="160" x2="856" y2="196"/>
+  </g>
+</svg>

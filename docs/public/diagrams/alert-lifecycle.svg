@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 720" width="840" height="720" role="img" aria-labelledby="t d" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Alert and assignment status flow</title>
+<desc id="d">An alert moves from new to in_progress when assigned, then to closed when verified or dismissed when dismissed. A new alert can also be verified or dismissed directly. An assignment moves from assigned to acknowledged to reported. The coordinator can mark an acknowledged assignment as failed, and an assigned alert can be reassigned to another officer.</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#122B59"/>
+</marker>
+</defs>
+<rect width="840" height="720" fill="#ffffff"/>
+<text x="60" y="36" font-size="12" font-weight="700" letter-spacing="1.6" fill="#3A4A66">ALERT STATUS</text>
+<path d="M150,202 L150,84 L690,84 L690,122" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M150,254 L150,372 L690,372 L690,334" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M240,228 L330,228" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M510,228 L532,228 L532,148 L600,148" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M510,228 L532,228 L532,308 L600,308" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="60" y="202" width="180" height="52" rx="26" fill="#77E6F6" stroke="#122B59" stroke-width="1.5"/><text x="150" y="233.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">new</text>
+<rect x="330" y="202" width="180" height="52" rx="26" fill="#BFDFFE" stroke="#122B59" stroke-width="1.5"/><text x="420" y="233.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">in_progress</text>
+<rect x="600" y="122" width="180" height="52" rx="26" fill="#122B59" stroke="#122B59" stroke-width="1.5"/><text x="690" y="153.5" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">closed</text>
+<rect x="600" y="282" width="180" height="52" rx="26" fill="#E6EFF7" stroke="#122B59" stroke-width="1.5"/><text x="690" y="313.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">dismissed</text>
+<text x="285" y="218" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">assigned</text>
+<text x="566" y="139" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">verify</text>
+<text x="566" y="299" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">dismiss</text>
+<text x="420" y="75" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">verify</text>
+<text x="420" y="363" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">dismiss</text>
+<text x="60" y="436" font-size="12" font-weight="700" letter-spacing="1.6" fill="#3A4A66">ASSIGNMENT STATUS</text>
+<path d="M240,580 L330,580" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M510,580 L600,580" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M420,554 L420,500 L600,500" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M150,606 L150,660 L600,660" fill="none" stroke="#122B59" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="60" y="554" width="180" height="52" rx="26" fill="#77E6F6" stroke="#122B59" stroke-width="1.5"/><text x="150" y="585.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">assigned</text>
+<rect x="330" y="554" width="180" height="52" rx="26" fill="#BFDFFE" stroke="#122B59" stroke-width="1.5"/><text x="420" y="585.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">acknowledged</text>
+<rect x="600" y="554" width="180" height="52" rx="26" fill="#122B59" stroke="#122B59" stroke-width="1.5"/><text x="690" y="585.5" text-anchor="middle" font-size="16" font-weight="600" fill="#ffffff">reported</text>
+<rect x="600" y="474" width="180" height="52" rx="26" fill="#E6EFF7" stroke="#122B59" stroke-width="1.5"/><text x="690" y="505.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">failed</text>
+<rect x="600" y="634" width="180" height="52" rx="26" fill="#E6EFF7" stroke="#122B59" stroke-width="1.5"/><text x="690" y="665.5" text-anchor="middle" font-size="16" font-weight="600" fill="#122B59">reassigned</text>
+<text x="510" y="491" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">coordinator marks failed</text>
+<text x="375" y="651" text-anchor="middle" font-size="13" fill="#3A4A66" paint-order="stroke" stroke="#ffffff" stroke-width="6" stroke-linejoin="round">alert assigned to another officer</text>
+</svg>
