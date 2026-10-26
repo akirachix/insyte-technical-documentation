@@ -73,4 +73,20 @@ The API refuses to start in `production` if:
 4. Run `alembic upgrade head` on each release.
 5. Serve over HTTPS only. HSTS switches on automatically in production.
 
+## Branching and CI
 
+- Work happens on `feature/<name>` branches.
+- Pull requests go into `develop`. Only the trainer merges into `develop`.
+- `develop` is merged into `main` for releases.
+- A pull request needs passing CI: Ruff and pytest for the backend; ESLint, Prettier and the build for the web.
+
+
+> [!TIP]
+> Both `ZONES_SOURCE` and `BASINS_SOURCE` accept either local file paths or full `https://` URLs when pulling down the required JSON layers during system imports.
+
+## Release Checklist
+
+Before releasing a new version of the backend to production, ensure the following steps are met:
+1. All database migrations are packaged via Alembic (`alembic revision --autogenerate`).
+2. Run all backend tests locally using `pytest` to confirm zero regressions.
+3. Ensure the `.env` configuration file on the production environment contains valid, production-grade keys (especially a high-entropy `JWT_SECRET` string).
